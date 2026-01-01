@@ -11,6 +11,72 @@ An intelligent credit assessment platform that evaluates loan applicants using m
 - 🎯 **Risk Categorization** - Automatic classification into Low/Medium/High risk categories
 - 📈 **Credit Score Generation** - 0-100 scale credit scoring system
 
+## Platform Flow
+
+```mermaid
+flowchart TD
+    Start([User Opens App]) --> Landing[Landing Page]
+    Landing --> GetStarted{Click Get Started}
+    GetStarted --> Step1[Step 1: Demographics<br/>Age, Gender, Employment]
+
+    Step1 --> Step2[Step 2: Financial Data<br/>Upload Bank Statement OR<br/>Manual Entry]
+
+    Step2 --> Upload{Bank Statement<br/>Uploaded?}
+    Upload -->|Yes| Extract[POST /extract<br/>AI Extracts Financial Data]
+    Upload -->|No| Manual[User Enters Data Manually]
+    Extract --> Step3
+    Manual --> Step3
+
+    Step3[Step 3: Loan History<br/>Previous Loans & Repayment]
+    Step3 --> Step4[Step 4: Behaviour<br/>Airtime & Data Spending]
+
+    Step4 --> Submit[Submit Assessment]
+    Submit --> Predict[POST /predict<br/>ML Model Generates Score]
+
+    Predict --> FeedbackAPI[POST /feedback<br/>AI Generates Feedback]
+
+    FeedbackAPI --> Results[Results Display<br/>✓ Credit Score 0-100<br/>✓ Risk Category<br/>✓ Default Probability<br/>✓ Personalized Feedback]
+
+    Results --> Choice{User Action}
+    Choice -->|New Assessment| Step1
+    Choice -->|Back to Home| Landing
+
+    style Start fill:#4B2E05,color:#fff
+    style Results fill:#D4A373,color:#000
+    style Predict fill:#7B4B2A,color:#fff
+    style Extract fill:#7B4B2A,color:#fff
+    style FeedbackAPI fill:#7B4B2A,color:#fff
+```
+
+### System Architecture
+
+```mermaid
+flowchart LR
+    User([User Browser]) --> Frontend[React + Vite<br/>Frontend]
+    Frontend --> API[FastAPI<br/>Backend]
+
+    API --> OpenAI[OpenAI API<br/>GPT-4o-mini]
+    API --> Model[ML Model<br/>Scikit-learn]
+
+    Model --> Artifacts[(Model Artifacts<br/>engine/models/)]
+
+    OpenAI --> Extract[Bank Statement<br/>Extraction]
+    OpenAI --> Feedback[Personalized<br/>Feedback]
+
+    Extract --> API
+    Feedback --> API
+    Model --> API
+
+    API --> Frontend
+    Frontend --> User
+
+    style User fill:#4B2E05,color:#fff
+    style Frontend fill:#CBB193,color:#000
+    style API fill:#7B4B2A,color:#fff
+    style OpenAI fill:#D4A373,color:#000
+    style Model fill:#D4A373,color:#000
+```
+
 ## Tech Stack
 
 ### Frontend
