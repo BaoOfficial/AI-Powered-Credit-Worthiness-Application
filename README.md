@@ -246,11 +246,8 @@ pip install -r requirements.txt
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
+## Contact
 
-This project is licensed under the MIT License.
-
-## Acknowledgments
-
-- Built with ❤️ for financial inclusion
-- Nigerian market focus with Naira (₦) currency support
+abdullahbadru66@gmail.com
+https://www.linkedin.com/in/abdullahibadrudeen
++234 903 4869 909
