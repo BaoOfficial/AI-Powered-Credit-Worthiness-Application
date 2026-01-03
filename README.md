@@ -178,9 +178,9 @@ This is a **personal portfolio project** showcasing my expertise in:
 
 ## Contact
 
-**Abdullah Badrudeen**
-**AI Developer**
+**Abdullah Badrudeen**  
+**AI Developer**  
 
-📧 abdullahbadru66@gmail.com
-🔗 https://www.linkedin.com/in/abdullahibadrudeen
-📱 +234 903 4869 909
+📧 abdullahbadru66@gmail.com  
+🔗 https://www.linkedin.com/in/abdullahibadrudeen  
+📱 +234 903 4869 909  
