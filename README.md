@@ -1,6 +1,8 @@
 # AI-Powered Credit Worthiness Assessment
 
-An intelligent credit assessment platform that evaluates loan applicants using machine learning and AI-driven analysis. The system provides automated credit scoring, risk categorization, and personalized feedback for loan officers.
+> **Portfolio Project by Abdullah Badrudeen**
+
+An intelligent credit assessment platform I developed to evaluate loan applicants using machine learning and AI-driven analysis. This system demonstrates my skills in full-stack development, ML engineering, and AI integration - providing automated credit scoring, risk categorization, and personalized feedback for loan officers.
 
 ## Features
 
@@ -96,82 +98,15 @@ flowchart LR
 - **Pandas** & **NumPy** - Data processing
 - **Joblib** - Model serialization
 
-## Installation
+## How It Works
 
-### Prerequisites
-- Node.js 16+
-- Python 3.8+
-- OpenAI API key
+### User Journey
 
-### 1. Clone the Repository
-
-```bash
-git clone <your-repo-url>
-cd CREDIT_WORTHINESS
-```
-
-### 2. Backend Setup
-
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Create .env file
-echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
-```
-
-### 3. Frontend Setup
-
-```bash
-cd frontend
-
-# Install dependencies
-npm install
-```
-
-### 4. Train ML Model (First Time Only)
-
-```bash
-cd engine/src
-python train.py
-```
-
-This creates model artifacts in `engine/models/` that the backend uses for predictions.
-
-## Usage
-
-### Start Backend Server
-
-```bash
-cd backend
-uvicorn main:app --reload
-```
-
-Backend runs on http://localhost:8000
-
-### Start Frontend Development Server
-
-```bash
-cd frontend
-npm run dev
-```
-
-Frontend runs on http://localhost:5173
-
-### Access the Application
-
-Open http://localhost:5173 in your browser and complete the 4-step assessment:
-
-1. **Demographics** - Age, gender, employment status
-2. **Financial Data** - Upload bank statement or enter data manually
-3. **Loan History** - Previous loan details and repayment record
-4. **Behaviour** - Spending patterns (airtime/data subscriptions)
+1. **Demographics** - Collects age, gender, and employment information
+2. **Financial Data** - Uploads bank statement (PDF/CSV) with AI extraction or manual entry
+3. **Loan History** - Captures previous loan details and repayment behavior
+4. **Behaviour** - Analyzes spending patterns (airtime/data subscriptions)
+5. **Results** - Displays credit score, risk category, and AI-generated feedback
 
 ## API Endpoints
 
@@ -221,33 +156,31 @@ The system generates:
 - **Default Probability**: Likelihood of loan default (0-1)
 - **Personalized Feedback**: AI-generated assessment for loan officers
 
-## Troubleshooting
+## Technical Highlights
 
-### Scikit-learn Version Warning
+- **Full-Stack Development** - React frontend + FastAPI backend
+- **Machine Learning Pipeline** - Custom training, preprocessing, and model deployment
+- **AI Integration** - OpenAI GPT-4o-mini for intelligent document parsing and feedback generation
+- **Production-Ready** - Error handling, validation, CORS configuration
+- **Clean Architecture** - Separation of concerns (Frontend/Backend/ML Engine)
 
-If you see model unpickling warnings:
-```bash
-pip install scikit-learn==1.5.2
-```
+## About This Project
 
-### OpenAI Proxy Error
+This is a **personal portfolio project** showcasing my expertise in:
+- Full-stack web development (React + FastAPI)
+- Machine learning model development and deployment
+- AI/LLM integration (OpenAI API)
+- Nigerian fintech context and requirements
 
-If you get `TypeError: unexpected keyword argument 'proxies'`:
-```bash
-pip uninstall openai httpx -y
-pip install -r requirements.txt
-```
+**Note:** This is a demonstration project built for portfolio purposes. It is not open for public use or contributions.
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+---
 
 ## Contact
 
-abdullahbadru66@gmail.com
-https://www.linkedin.com/in/abdullahibadrudeen
-+234 903 4869 909
+**Abdullah Badrudeen**
+**AI Developer**
+
+📧 abdullahbadru66@gmail.com
+🔗 https://www.linkedin.com/in/abdullahibadrudeen
+📱 +234 903 4869 909
